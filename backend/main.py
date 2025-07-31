@@ -4,6 +4,7 @@ from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from datetime import datetime, timezone
+import httpx
 
 # Database setup
 SQLALCHEMY_DATABASE_URL = "sqlite:///./data/sql_app.db"
@@ -37,6 +38,12 @@ class TransactionResponse(TransactionCreate):
     class Config:
         from_attributes = True
 
+class NumbersToSum(BaseModel):
+    values: list[float]
+
+class SumResult(BaseModel):
+    sum: float
+
 app = FastAPI()
 
 # Dependency to get DB session
@@ -63,3 +70,15 @@ async def create_transaction(transaction: TransactionCreate, db: Session = Depen
 async def read_transactions(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     transactions = db.query(Transaction).offset(skip).limit(limit).all()
     return transactions
+
+@app.post("/calculate-sum/", response_model=SumResult)
+async def calculate_sum_with_rust(numbers: NumbersToSum):
+    async with httpx.AsyncClient() as client:
+        try:
+            response = await client.post("http://localhost:8001/sum", json=numbers.model_dump())
+            response.raise_for_status() # Raise an exception for 4xx/5xx responses
+            return response.json()
+        except httpx.RequestError as exc:
+            raise HTTPException(status_code=500, detail=f"An error occurred while requesting Rust engine: {exc}")
+        except httpx.HTTPStatusError as exc:
+            raise HTTPException(status_code=exc.response.status_code, detail=f"Rust engine returned an error: {exc.response.text}")
