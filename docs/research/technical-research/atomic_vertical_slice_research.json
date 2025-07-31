@@ -1,0 +1,243 @@
+{
+  "theory": "Atomic Vertical Slice Hybrid Architecture",
+  "research_timestamp": "2025-07-30T23:04:37.293033",
+  "total_evidence_sources": 12,
+  "evidence_summary": {
+    "atomic_patterns_found": 6,
+    "vertical_slice_patterns_found": 2,
+    "hybrid_patterns_found": 9,
+    "supporting_sources": [
+      {
+        "url": "https://martinfowler.com/architecture",
+        "title": "Software Architecture Guide",
+        "total_score": 1
+      },
+      {
+        "url": "https://martinfowler.com/tags/API%20design.html",
+        "title": "API design",
+        "total_score": 1
+      },
+      {
+        "url": "https://martinfowler.com/tags/application%20architecture.html",
+        "title": "application architecture",
+        "total_score": 1
+      },
+      {
+        "url": "https://martinfowler.com/tags/enterprise%20architecture.html",
+        "title": "enterprise architecture",
+        "total_score": 2
+      },
+      {
+        "url": "https://martinfowler.com/tags/object%20collaboration%20design.html",
+        "title": "object collaboration design",
+        "total_score": 1
+      },
+      {
+        "url": "https://martinfowler.com/articles/xapo-architecture-experience.html",
+        "title": "Decentralizing the Practice of Architecture at Xapo Bank",
+        "total_score": 1
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems",
+        "title": "Catalog of Patterns of Distributed Systems",
+        "total_score": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/scaling-architecture-conversationally.html",
+        "title": "Scaling the Practice of Architecture, Conversationally",
+        "total_score": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-legacy-displacement",
+        "title": "Patterns of Legacy Displacement",
+        "total_score": 1
+      },
+      {
+        "url": "https://martinfowler.com/articles/gen-ai-patterns",
+        "title": "Emerging Patterns in Building GenAI Products",
+        "total_score": 1
+      },
+      {
+        "url": "https://patterns.dev",
+        "title": "Patterns.dev",
+        "total_score": 2
+      },
+      {
+        "url": "https://www.patterns.dev",
+        "title": "Patterns.dev",
+        "total_score": 2
+      }
+    ],
+    "related_patterns": []
+  },
+  "feasibility_analysis": {
+    "overall_feasibility": "Feasible with Modifications",
+    "confidence_level": "Medium",
+    "supporting_evidence_strength": "Moderate",
+    "architectural_soundness": "Needs Analysis",
+    "implementation_practicality": "Unclear",
+    "recommendations": [
+      "Atomic component patterns show promise - investigate further",
+      "Vertical slice architecture has established precedents",
+      "Hybrid approaches are documented in industry"
+    ]
+  },
+  "detailed_evidence": [
+    {
+      "url": "https://martinfowler.com/architecture",
+      "title": "Software Architecture Guide",
+      "depth": 1,
+      "evidence": {
+        "atomic_score": 0,
+        "vertical_slice_score": 1,
+        "hybrid_score": 0,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.065304"
+    },
+    {
+      "url": "https://martinfowler.com/tags/API%20design.html",
+      "title": "API design",
+      "depth": 1,
+      "evidence": {
+        "atomic_score": 0,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.066873"
+    },
+    {
+      "url": "https://martinfowler.com/tags/application%20architecture.html",
+      "title": "application architecture",
+      "depth": 1,
+      "evidence": {
+        "atomic_score": 0,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.068197"
+    },
+    {
+      "url": "https://martinfowler.com/tags/enterprise%20architecture.html",
+      "title": "enterprise architecture",
+      "depth": 1,
+      "evidence": {
+        "atomic_score": 1,
+        "vertical_slice_score": 1,
+        "hybrid_score": 0,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.070146"
+    },
+    {
+      "url": "https://martinfowler.com/tags/object%20collaboration%20design.html",
+      "title": "object collaboration design",
+      "depth": 1,
+      "evidence": {
+        "atomic_score": 0,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.070937"
+    },
+    {
+      "url": "https://martinfowler.com/articles/xapo-architecture-experience.html",
+      "title": "Decentralizing the Practice of Architecture at Xapo Bank",
+      "depth": 2,
+      "evidence": {
+        "atomic_score": 1,
+        "vertical_slice_score": 0,
+        "hybrid_score": 0,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.072647"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems",
+      "title": "Catalog of Patterns of Distributed Systems",
+      "depth": 2,
+      "evidence": {
+        "atomic_score": 1,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.072917"
+    },
+    {
+      "url": "https://martinfowler.com/articles/scaling-architecture-conversationally.html",
+      "title": "Scaling the Practice of Architecture, Conversationally",
+      "depth": 2,
+      "evidence": {
+        "atomic_score": 1,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.073895"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement",
+      "title": "Patterns of Legacy Displacement",
+      "depth": 2,
+      "evidence": {
+        "atomic_score": 0,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.074862"
+    },
+    {
+      "url": "https://martinfowler.com/articles/gen-ai-patterns",
+      "title": "Emerging Patterns in Building GenAI Products",
+      "depth": 2,
+      "evidence": {
+        "atomic_score": 0,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:33.076152"
+    },
+    {
+      "url": "https://patterns.dev",
+      "title": "Patterns.dev",
+      "depth": 0,
+      "evidence": {
+        "atomic_score": 1,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:36.926355"
+    },
+    {
+      "url": "https://www.patterns.dev",
+      "title": "Patterns.dev",
+      "depth": 1,
+      "evidence": {
+        "atomic_score": 1,
+        "vertical_slice_score": 0,
+        "hybrid_score": 1,
+        "snippets": []
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:04:36.926655"
+    }
+  ]
+}

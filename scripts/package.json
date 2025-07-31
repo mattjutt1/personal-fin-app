@@ -1,0 +1,17 @@
+{
+  "name": "app-review-crawler",
+  "version": "1.0.0",
+  "description": "Deep crawler for app store reviews and user feedback validation",
+  "main": "app-review-crawler.js",
+  "scripts": {
+    "crawl": "node app-review-crawler.js",
+    "install-playwright": "npx playwright install chromium"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "devDependencies": {},
+  "keywords": ["crawler", "playwright", "app-store", "reviews", "validation"],
+  "author": "Personal Finance App Research",
+  "license": "MIT"
+}

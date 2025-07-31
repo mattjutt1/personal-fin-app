@@ -1,0 +1,1621 @@
+{
+  "research_focus": "Atomic Vertical Slice Hybrid Architecture - Gap Analysis",
+  "research_timestamp": "2025-07-30T23:13:35.683783",
+  "total_evidence_sources": 61,
+  "gap_analysis": {
+    "vertical_slice_evidence": 1,
+    "implementation_evidence": 7,
+    "tooling_evidence": 58,
+    "case_study_evidence": 32,
+    "gap_filling_sources": [
+      {
+        "url": "https://martinfowler.com",
+        "title": "martinfowler.com",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 6,
+          "case_study": 2
+        },
+        "total_gap_relevance": 8
+      },
+      {
+        "url": "https://martinfowler.com/architecture",
+        "title": "Software Architecture Guide",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 1,
+          "tooling": 3,
+          "case_study": 2
+        },
+        "total_gap_relevance": 6
+      },
+      {
+        "url": "https://martinfowler.com/tags/analysis%20patterns.html",
+        "title": "analysis patterns",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 1
+        },
+        "total_gap_relevance": 4
+      },
+      {
+        "url": "https://martinfowler.com/microservices",
+        "title": "Microservices Guide",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 2
+        },
+        "total_gap_relevance": 5
+      },
+      {
+        "url": "https://martinfowler.com/tags/API%20design.html",
+        "title": "API design",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 5,
+          "case_study": 2
+        },
+        "total_gap_relevance": 7
+      },
+      {
+        "url": "https://martinfowler.com/tags/application%20architecture.html",
+        "title": "application architecture",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 2,
+          "tooling": 5,
+          "case_study": 3
+        },
+        "total_gap_relevance": 10
+      },
+      {
+        "url": "https://martinfowler.com/tags/expositional%20architectures.html",
+        "title": "expositional architectures",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 5,
+          "case_study": 1
+        },
+        "total_gap_relevance": 6
+      },
+      {
+        "url": "https://martinfowler.com/tags/evolutionary%20design.html",
+        "title": "evolutionary design",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 5,
+          "case_study": 2
+        },
+        "total_gap_relevance": 7
+      },
+      {
+        "url": "https://martinfowler.com/tags/design.html",
+        "title": "design",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 4,
+          "case_study": 1
+        },
+        "total_gap_relevance": 5
+      },
+      {
+        "url": "https://martinfowler.com/tags/domain%20driven%20design.html",
+        "title": "domain driven design",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 2
+        },
+        "total_gap_relevance": 5
+      },
+      {
+        "url": "https://martinfowler.com/tags/enterprise%20architecture.html",
+        "title": "enterprise architecture",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 6,
+          "case_study": 4
+        },
+        "total_gap_relevance": 10
+      },
+      {
+        "url": "https://martinfowler.com/tags/event%20architectures.html",
+        "title": "event architectures",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 1
+        },
+        "total_gap_relevance": 4
+      },
+      {
+        "url": "https://martinfowler.com/tags/microservices.html",
+        "title": "microservices",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 2
+        },
+        "total_gap_relevance": 5
+      },
+      {
+        "url": "https://martinfowler.com/tags/object%20collaboration%20design.html",
+        "title": "object collaboration design",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 5,
+          "case_study": 1
+        },
+        "total_gap_relevance": 6
+      },
+      {
+        "url": "https://martinfowler.com/articles/break-monolith-into-microservices.html",
+        "title": "How to break a Monolith into Microservices",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 4,
+          "case_study": 1
+        },
+        "total_gap_relevance": 5
+      },
+      {
+        "url": "https://martinfowler.com/articles/xapo-architecture-experience.html",
+        "title": "Decentralizing the Practice of Architecture at Xapo Bank",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 4
+        },
+        "total_gap_relevance": 7
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems",
+        "title": "Catalog of Patterns of Distributed Systems",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/scaling-architecture-conversationally.html",
+        "title": "Scaling the Practice of Architecture, Conversationally",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 4,
+          "case_study": 3
+        },
+        "total_gap_relevance": 7
+      },
+      {
+        "url": "https://martinfowler.com/articles/microservices.html",
+        "title": "Microservices",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 1,
+          "tooling": 4,
+          "case_study": 4
+        },
+        "total_gap_relevance": 9
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-legacy-displacement",
+        "title": "Patterns of Legacy Displacement",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 3
+        },
+        "total_gap_relevance": 6
+      },
+      {
+        "url": "https://martinfowler.com/articles/dont-start-monolith.html",
+        "title": "Don’t start with a monolith",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/modularizing-react-apps.html",
+        "title": "Modularizing React Applications with Established UI Patterns",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 2,
+          "tooling": 3,
+          "case_study": 3
+        },
+        "total_gap_relevance": 8
+      },
+      {
+        "url": "https://martinfowler.com/articles/designDead.html",
+        "title": "Is Design Dead?",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 1,
+          "tooling": 5,
+          "case_study": 2
+        },
+        "total_gap_relevance": 8
+      },
+      {
+        "url": "https://martinfowler.com/articles/linking-modular-arch.html",
+        "title": "Linking Modular Architecture to Development Teams",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 4,
+          "case_study": 3
+        },
+        "total_gap_relevance": 7
+      },
+      {
+        "url": "https://martinfowler.com/articles/data-monolith-to-mesh.html",
+        "title": "How to Move Beyond a Monolithic Data Lake to a Distributed Data\n  Mesh",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 5,
+          "case_study": 3
+        },
+        "total_gap_relevance": 8
+      },
+      {
+        "url": "https://martinfowler.com/articles/gen-ai-patterns",
+        "title": "Emerging Patterns in Building GenAI Products",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 1,
+          "tooling": 5,
+          "case_study": 2
+        },
+        "total_gap_relevance": 8
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-legacy-displacement/create-town-plan.html",
+        "title": "Create Town Plan",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-legacy-displacement/event-interception.html",
+        "title": "Event Interception",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 1,
+          "case_study": 1
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-legacy-displacement/feature-parity.html",
+        "title": "Feature Parity",
+        "gap_scores": {
+          "vertical_slice": 1,
+          "implementation": 0,
+          "tooling": 4,
+          "case_study": 1
+        },
+        "total_gap_relevance": 6
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-legacy-displacement/extract-product-lines.html",
+        "title": "Extract Product Lines",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-legacy-displacement/divert-the-flow.html",
+        "title": "Divert the Flow",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 1
+        },
+        "total_gap_relevance": 3
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/clock-bound-wait.html",
+        "title": "Clock-Bound Wait",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/follower-reads.html",
+        "title": "Follower Reads",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/hybrid-clock.html",
+        "title": "Hybrid Clock",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/idempotent-receiver.html",
+        "title": "Idempotent Receiver",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/majority-quorum.html",
+        "title": "Majority Quorum",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/high-watermark.html",
+        "title": "High-Water Mark",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/generation-clock.html",
+        "title": "Generation Clock",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/leader-follower.html",
+        "title": "Leader and Followers",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/lease.html",
+        "title": "Lease",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/key-range-partitions.html",
+        "title": "Key-Range Partitions",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/lamport-clock.html",
+        "title": "Lamport Clock",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/request-waiting-list.html",
+        "title": "Request Waiting List",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/request-batch.html",
+        "title": "Request Batch",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 2,
+          "case_study": 0
+        },
+        "total_gap_relevance": 2
+      },
+      {
+        "url": "https://martinfowler.com/books/patterns-distributed.html",
+        "title": "Patterns of Distributed Systems",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 0,
+          "tooling": 3,
+          "case_study": 1
+        },
+        "total_gap_relevance": 4
+      },
+      {
+        "url": "https://martinfowler.com/design.html",
+        "title": "Software Architecture Guide",
+        "gap_scores": {
+          "vertical_slice": 0,
+          "implementation": 1,
+          "tooling": 3,
+          "case_study": 2
+        },
+        "total_gap_relevance": 6
+      }
+    ],
+    "implementation_patterns": [],
+    "tooling_discoveries": [],
+    "case_studies_found": []
+  },
+  "gap_assessment": {
+    "overall_gap_resolution": "Significantly Resolved",
+    "gap_resolution_confidence": "High",
+    "most_resolved_gap": "tooling",
+    "least_resolved_gap": "vertical_slice",
+    "recommendations": [
+      "Limited vertical slice evidence - consider original research contribution",
+      "Implementation patterns identified - create practical guide",
+      "Tooling support found - evaluate existing solutions",
+      "Real-world examples found - analyze for pattern validation"
+    ]
+  },
+  "detailed_gap_evidence": [
+    {
+      "url": "https://martinfowler.com",
+      "title": "martinfowler.com",
+      "depth": 0,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 6,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.355004"
+    },
+    {
+      "url": "https://martinfowler.com/architecture",
+      "title": "Software Architecture Guide",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 1,
+        "tooling_score": 3,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": [
+            {
+              "term": "code example",
+              "context": "oblems in ui design.\n    this article explores the application of established ui building patterns to the\n    react world, with a refactoring journey code example to showcase the benefits.\n    the emphasis is placed on how layering architecture can help organize the react\n    application for improve"
+            }
+          ]
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.356725"
+    },
+    {
+      "url": "https://martinfowler.com/tags/analysis%20patterns.html",
+      "title": "analysis patterns",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.357700"
+    },
+    {
+      "url": "https://martinfowler.com/microservices",
+      "title": "Microservices Guide",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.359499"
+    },
+    {
+      "url": "https://martinfowler.com/tags/API%20design.html",
+      "title": "API design",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 5,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.361905"
+    },
+    {
+      "url": "https://martinfowler.com/tags/application%20architecture.html",
+      "title": "application architecture",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 2,
+        "tooling_score": 5,
+        "case_study_score": 3,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": [
+            {
+              "term": "code example",
+              "context": "oblems in ui design.\n    this article explores the application of established ui building patterns to the\n    react world, with a refactoring journey code example to showcase the benefits.\n    the emphasis is placed on how layering architecture can help organize the react\n    application for improve"
+            },
+            {
+              "term": "how to implement",
+              "context": "ng, just like any pattern they are useful in a certain \n\tcontext. patterns always have two parts: the how and the when. not\n\tjust do you need to know how to implement them, you also have to\n\tknow when to use them and when to leave them alone.</p>\n\n<div>\n<p>by martin fowler</p>\n\n<p>21 oct 2004</p>\n\n<"
+            }
+          ]
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.365716"
+    },
+    {
+      "url": "https://martinfowler.com/tags/expositional%20architectures.html",
+      "title": "expositional architectures",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 5,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.366676"
+    },
+    {
+      "url": "https://martinfowler.com/tags/evolutionary%20design.html",
+      "title": "evolutionary design",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 5,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.368652"
+    },
+    {
+      "url": "https://martinfowler.com/tags/design.html",
+      "title": "design",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 4,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.369819"
+    },
+    {
+      "url": "https://martinfowler.com/tags/domain%20driven%20design.html",
+      "title": "domain driven design",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.371445"
+    },
+    {
+      "url": "https://martinfowler.com/tags/enterprise%20architecture.html",
+      "title": "enterprise architecture",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 6,
+        "case_study_score": 4,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.373432"
+    },
+    {
+      "url": "https://martinfowler.com/tags/event%20architectures.html",
+      "title": "event architectures",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.374496"
+    },
+    {
+      "url": "https://martinfowler.com/tags/microservices.html",
+      "title": "microservices",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.376460"
+    },
+    {
+      "url": "https://martinfowler.com/tags/object%20collaboration%20design.html",
+      "title": "object collaboration design",
+      "depth": 1,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 5,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.378302"
+    },
+    {
+      "url": "https://martinfowler.com/articles/break-monolith-into-microservices.html",
+      "title": "How to break a Monolith into Microservices",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 4,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.380420"
+    },
+    {
+      "url": "https://martinfowler.com/articles/xapo-architecture-experience.html",
+      "title": "Decentralizing the Practice of Architecture at Xapo Bank",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 4,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.382827"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems",
+      "title": "Catalog of Patterns of Distributed Systems",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.383895"
+    },
+    {
+      "url": "https://martinfowler.com/articles/scaling-architecture-conversationally.html",
+      "title": "Scaling the Practice of Architecture, Conversationally",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 4,
+        "case_study_score": 3,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.387200"
+    },
+    {
+      "url": "https://martinfowler.com/articles/microservices.html",
+      "title": "Microservices",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 1,
+        "tooling_score": 4,
+        "case_study_score": 4,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": [
+            {
+              "term": "implementation pattern",
+              "context": "com/gp/product/0321413091/ref=as_li_tl?ie=utf8&amp;camp=1789&amp;creative=9325&amp;creativeasin=0321413091&amp;linkcode=as2&amp;tag=martinfowlerc-20\">implementation patterns</a>.\n    </p>\n</div>\n\n<p>putting components into services adds an opportunity for\n        more granular release planning. with"
+            }
+          ]
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.390997"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement",
+      "title": "Patterns of Legacy Displacement",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 3,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.394043"
+    },
+    {
+      "url": "https://martinfowler.com/articles/dont-start-monolith.html",
+      "title": "Don’t start with a monolith",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.395057"
+    },
+    {
+      "url": "https://martinfowler.com/articles/modularizing-react-apps.html",
+      "title": "Modularizing React Applications with Established UI Patterns",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 2,
+        "tooling_score": 3,
+        "case_study_score": 3,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": [
+            {
+              "term": "code example",
+              "context": "oblems in ui design.\n    this article explores the application of established ui building patterns to the\n    react world, with a refactoring journey code example to showcase the benefits.\n    the emphasis is placed on how layering architecture can help organize the react\n    application for improve"
+            },
+            {
+              "term": "tutorial",
+              "context": "t;${amount}&lt;/button&gt;\n      &lt;/div&gt;\n    );\n  };</pre>\n\n<p>the code above is pretty typical. you might have seen it in the get\n      started tutorial somewhere. and it's not necessary bad. however, as we\n      mentioned above, the code has mixed different concerns all in a single\n      comp"
+            }
+          ]
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.398199"
+    },
+    {
+      "url": "https://martinfowler.com/articles/distributed-objects-microservices.html",
+      "title": "Microservices and the First Law of Distributed\n  Objects",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.399317"
+    },
+    {
+      "url": "https://martinfowler.com/articles/designDead.html",
+      "title": "Is Design Dead?",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 1,
+        "tooling_score": 5,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": [
+            {
+              "term": "how to implement",
+              "context": "be</p>\n\n<ul>\n<li>invest time in learning about patterns</li>\n\n<li>concentrate on when to apply the pattern (not too early)\n</li>\n\n<li>concentrate on how to implement the pattern in its\nsimplest form first, then add complexity later.</li>\n\n<li>if you put a pattern in, and later realize that it isn't"
+            }
+          ]
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.402330"
+    },
+    {
+      "url": "https://martinfowler.com/articles/linking-modular-arch.html",
+      "title": "Linking Modular Architecture to Development Teams",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 4,
+        "case_study_score": 3,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.404742"
+    },
+    {
+      "url": "https://martinfowler.com/articles/data-monolith-to-mesh.html",
+      "title": "How to Move Beyond a Monolithic Data Lake to a Distributed Data\n  Mesh",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 5,
+        "case_study_score": 3,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.408069"
+    },
+    {
+      "url": "https://martinfowler.com/articles/gen-ai-patterns",
+      "title": "Emerging Patterns in Building GenAI Products",
+      "depth": 2,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 1,
+        "tooling_score": 5,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": [
+            {
+              "term": "tutorial",
+              "context": "ends with “✣ ✣ ✣”</p>\n\n<p>these patterns are our attempt to understand what <i>we have seen</i> in our\n    engagements. there's a lot of research and tutorial writing on these systems\n    out there, and some decent books are beginning to appear to act as general\n    education on these systems and ho"
+            }
+          ]
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.411902"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/build-as-you-mean-to-continue.html",
+      "title": "Build as you mean to continue",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 0,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.412444"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/create-town-plan.html",
+      "title": "Create Town Plan",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.413571"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/event-interception.html",
+      "title": "Event Interception",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.417210"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/feature-parity.html",
+      "title": "Feature Parity",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 1,
+        "implementation_score": 0,
+        "tooling_score": 4,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [
+            {
+              "term": "vertical slice",
+              "context": "n, with high levels of completeness being reported and\n            yet an inability to test or release usable software.</p>\n</section>\n\n<section>\n<h4>vertical slices</h4>\n\n<p>provide better transparency of progress, but it is\n          likely that vertical slices will not be the output of the system"
+            }
+          ],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.418954"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/incremental-displacement.html",
+      "title": "Incremental Displacement",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 0,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.419951"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/legacy-mimic.html",
+      "title": "Legacy Mimic",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.420741"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/extract-product-lines.html",
+      "title": "Extract Product Lines",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.422650"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/revert-to-source.html",
+      "title": "Revert to Source",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.425284"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/divert-the-flow.html",
+      "title": "Divert the Flow",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.427140"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/fixed-partitions.html",
+      "title": "Fixed Partitions",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.427603"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/heartbeat.html",
+      "title": "HeartBeat",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.427914"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/emergent-leader.html",
+      "title": "Emergent Leader",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.428232"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/clock-bound-wait.html",
+      "title": "Clock-Bound Wait",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.429016"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-legacy-displacement/transitional-architecture.html",
+      "title": "Transitional Architecture",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 0,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.430517"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/follower-reads.html",
+      "title": "Follower Reads",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.430799"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/gossip-dissemination.html",
+      "title": "Gossip Dissemination",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.431078"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/hybrid-clock.html",
+      "title": "Hybrid Clock",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.431504"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/consistent-core.html",
+      "title": "Consistent Core",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.431786"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/idempotent-receiver.html",
+      "title": "Idempotent Receiver",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.432060"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/majority-quorum.html",
+      "title": "Majority Quorum",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.432405"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/high-watermark.html",
+      "title": "High-Water Mark",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.432695"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/low-watermark.html",
+      "title": "Low-Water Mark",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.432922"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/generation-clock.html",
+      "title": "Generation Clock",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.433206"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/leader-follower.html",
+      "title": "Leader and Followers",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.433460"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/lease.html",
+      "title": "Lease",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.433706"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/key-range-partitions.html",
+      "title": "Key-Range Partitions",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.434062"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/lamport-clock.html",
+      "title": "Lamport Clock",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.434373"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/request-waiting-list.html",
+      "title": "Request Waiting List",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.434661"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/request-pipeline.html",
+      "title": "Request Pipeline",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.434915"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/paxos.html",
+      "title": "Paxos",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.435261"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/request-batch.html",
+      "title": "Request Batch",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 2,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.435512"
+    },
+    {
+      "url": "https://martinfowler.com/articles/patterns-of-distributed-systems/replicated-log.html",
+      "title": "Replicated Log",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 1,
+        "case_study_score": 0,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.435775"
+    },
+    {
+      "url": "https://martinfowler.com/books/patterns-distributed.html",
+      "title": "Patterns of Distributed Systems",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 0,
+        "tooling_score": 3,
+        "case_study_score": 1,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": []
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.436168"
+    },
+    {
+      "url": "https://martinfowler.com/design.html",
+      "title": "Software Architecture Guide",
+      "depth": 3,
+      "gap_evidence": {
+        "vertical_slice_score": 0,
+        "implementation_score": 1,
+        "tooling_score": 3,
+        "case_study_score": 2,
+        "gap_snippets": {
+          "vertical_slice": [],
+          "implementation": [
+            {
+              "term": "code example",
+              "context": "oblems in ui design.\n    this article explores the application of established ui building patterns to the\n    react world, with a refactoring journey code example to showcase the benefits.\n    the emphasis is placed on how layering architecture can help organize the react\n    application for improve"
+            }
+          ]
+        }
+      },
+      "relevance_score": 0,
+      "timestamp": "2025-07-30T23:13:35.437338"
+    }
+  ]
+}
