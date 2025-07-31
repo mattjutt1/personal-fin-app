@@ -1,12 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useQuery, useMutation } from "../convex/_generated/react";
+import { api } from "../convex/_generated/api";
 
 export default function Home() {
   const [numbers, setNumbers] = useState('');
   const [sumResult, setSumResult] = useState<number | null>(null);
-  const [message, setMessage] = useState('Welcome to your Personal Financial AI Assistant!');
   const [error, setError] = useState<string | null>(null);
+
+  // Use Convex query for the initial message
+  const helloMessage = useQuery(api.myFunctions.hello);
+
+  // Use Convex mutation for the sum calculation
+  const calculateSumConvex = useMutation(api.myFunctions.sum);
 
   const handleCalculateSum = async () => {
     setError(null);
@@ -18,21 +25,9 @@ export default function Home() {
         return;
       }
 
-      const response = await fetch('http://localhost:8000/calculate-sum/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ values }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || 'Failed to calculate sum.');
-      }
-
-      const data = await response.json();
-      setSumResult(data.sum);
+      // Call the Convex mutation
+      const result = await calculateSumConvex({ numbers: values });
+      setSumResult(result.sum);
     } catch (err: any) {
       setError(err.message || 'An unexpected error occurred.');
       console.error('Error calculating sum:', err);
@@ -41,7 +36,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <h1 className="text-4xl font-bold mb-8">{message}</h1>
+      <h1 className="text-4xl font-bold mb-8">
+        {helloMessage ? helloMessage.message : 'Loading message from Convex...'}
+      </h1>
 
       <div className="flex flex-col items-center gap-4">
         <input
@@ -55,7 +52,7 @@ export default function Home() {
           onClick={handleCalculateSum}
           className="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
-          Calculate Sum with Rust Engine
+          Calculate Sum with Convex Engine
         </button>
 
         {sumResult !== null && (
@@ -69,4 +66,3 @@ export default function Home() {
     </main>
   );
 }
-
