@@ -13,6 +13,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enable build validation (remove bypass flags in next.config.ts)
 - Complete Convex Auth API integration (restore full functionality)
 
+## [0.3.3] - 2025-08-02
+
+### Added
+- Specific sub-agent selection guidelines for available SuperClaude framework agents
+  - Defined 14 available specialized agents with their capabilities
+  - Project-specific usage guidelines for personal finance app development
+  - Agent categorization: Technical Development, Quality & Analysis, Communication, Project-Specific
+- Detailed sub-agent selection matrix for different development tasks
+  - Frontend: frontend-ux-specialist, nextjs-atlas-frontend
+  - Backend: backend-reliability-engineer, integration-tester
+  - Quality: code-quality-refactorer, atlas-refactor, systems-architect
+  - Security: security-threat-modeler, performance-optimizer
+  - Documentation: professional-documentation-writer, knowledge-transfer-mentor
+
+### Changed
+- Updated sub-agent workflow examples to use specific agent names
+- Enhanced sub-agent documentation standards with concrete agent responsibilities
+
 ## [0.3.2] - 2025-08-02
 
 ### Added

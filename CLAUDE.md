@@ -1219,6 +1219,12 @@ printenv | grep CONVEX       # Check Convex environment variables
    - Main agent integration requirements for sub-agent work validation
    - Quality gates ensuring sub-agents follow project standards and architecture
 
+5. **Available Sub-Agents Defined**:
+   - 14 specialized SuperClaude framework agents catalogued
+   - Project-specific selection guidelines for personal finance app development
+   - Agent categories: Technical Development, Quality & Analysis, Communication, Project-Specific
+   - Detailed usage matrix for frontend, backend, quality, security, and documentation tasks
+
 ### 2025-08-02: Authentication System Resolution ✅
 **Issue Resolved**: Runtime error "Cannot read properties of undefined (reading 'currentUser')"
 

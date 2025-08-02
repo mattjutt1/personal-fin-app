@@ -267,8 +267,33 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ## Sub-Agent Documentation & Version Control Rules (MANDATORY)
 
+### Available Sub-Agents (SuperClaude Framework)
+**Specialized Agents Available for Task Delegation**:
+
+#### Technical Development Agents
+1. **frontend-ux-specialist**: UI/UX improvements, accessibility, performance optimization
+2. **backend-reliability-engineer**: Server-side development, API design, database operations  
+3. **systems-architect**: Architectural analysis, system design, scalability planning
+4. **devops-infrastructure-specialist**: Infrastructure automation, deployment, monitoring
+
+#### Quality & Analysis Agents
+5. **security-threat-modeler**: Security assessments, vulnerability analysis, compliance
+6. **performance-optimizer**: Performance optimization, bottleneck identification
+7. **quality-assurance-specialist**: Testing strategies, quality assessment, validation
+8. **root-cause-analyzer**: Systematic investigation, debugging, root cause analysis
+9. **code-quality-refactorer**: Code quality improvement, technical debt reduction
+
+#### Communication & Knowledge Agents
+10. **professional-documentation-writer**: Documentation creation, content localization
+11. **knowledge-transfer-mentor**: Educational explanations, learning guidance
+
+#### Project-Specific Agents
+12. **nextjs-atlas-frontend**: Frontend components, UI features, GraphQL integration (Atlas-specific)
+13. **atlas-refactor**: Code complexity analysis, architectural improvements (Atlas-specific)
+14. **integration-tester**: System integration validation, deployment readiness testing
+
 ### Sub-Agent Compliance Requirements
-**MANDATORY**: All sub-agents (Task tool delegations) must follow the same documentation standards:
+**MANDATORY**: All sub-agents must follow the same documentation standards:
 
 1. **Sub-Agent Documentation Responsibilities**:
    - Sub-agents must provide complete change summaries for main agent
@@ -302,6 +327,37 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
    - Security rules (NON-NEGOTIABLE) apply to all sub-agent work
    - Sub-agents must maintain hybrid consolidated-slice architecture
 
+### Sub-Agent Selection Guidelines for Personal Finance App
+
+#### When to Use Specific Sub-Agents
+**Frontend Development**:
+- **frontend-ux-specialist**: UI components, mobile responsiveness, accessibility compliance
+- **nextjs-atlas-frontend**: React components, Next.js pages, Tailwind styling (if available)
+
+**Backend & API Development**:
+- **backend-reliability-engineer**: Convex functions, API routes, database schema
+- **integration-tester**: Authentication flow testing, API validation
+
+**Code Quality & Architecture**:
+- **code-quality-refactorer**: TypeScript error fixes, ESLint violations
+- **atlas-refactor**: Complexity analysis, architectural improvements (if available)
+- **systems-architect**: Major architectural decisions, scalability planning
+
+**Security & Performance**:
+- **security-threat-modeler**: Authentication security, payment processing validation
+- **performance-optimizer**: Load time optimization, real-time sync performance
+
+**Quality Assurance**:
+- **quality-assurance-specialist**: Testing strategies, validation workflows
+- **root-cause-analyzer**: Debugging complex issues, error investigation
+
+**Documentation & Communication**:
+- **professional-documentation-writer**: README updates, technical documentation
+- **knowledge-transfer-mentor**: Educational explanations, learning materials
+
+**Infrastructure**:
+- **devops-infrastructure-specialist**: Deployment, monitoring, CI/CD setup
+
 ### Sub-Agent Workflow Example
 ```bash
 # After sub-agent completes work:
@@ -310,10 +366,10 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 3. Update CLAUDE.md with sub-agent work integration
 4. Update CHANGELOG.md with consolidated changes
 5. Stage all changes: git add .
-6. Commit with format: "feat: implement feature via sub-agent delegation
+6. Commit with format: "feat: implement auth UI via frontend-ux-specialist
 
-- Sub-agent completed: [specific work]
-- Files modified: [list]
+- Sub-agent completed: SignIn/SignUp form components with validation
+- Files modified: src/components/business/auth/, src/app/auth/
 - Updated CLAUDE.md and CHANGELOG.md
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
