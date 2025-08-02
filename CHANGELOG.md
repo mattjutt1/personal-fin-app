@@ -13,6 +13,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enable build validation (remove bypass flags in next.config.ts)
 - Complete Convex Auth API integration (restore full functionality)
 
+## [0.3.2] - 2025-08-02
+
+### Added
+- Sub-agent documentation and version control rules in PROJECT_RULES.md
+  - Mandatory documentation standards for all Task tool delegations
+  - Sub-agent deliverable format with complete change summaries
+  - Main agent integration requirements for sub-agent work
+  - Quality gates ensuring sub-agents follow project standards
+- Sub-agent handoff protocol with structured deliverable format
+- Sub-agent accountability framework ensuring proper integration
+
+### Changed
+- Extended documentation rules to cover all sub-agent interactions
+- Established main agent responsibility for all sub-agent work validation
+
 ## [0.3.1] - 2025-08-02
 
 ### Added

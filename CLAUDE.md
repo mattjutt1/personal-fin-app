@@ -1213,6 +1213,12 @@ printenv | grep CONVEX       # Check Convex environment variables
    - Required git commits after each logical unit of work
    - Standardized commit message format with AI attribution
 
+4. **Sub-Agent Rules Added**:
+   - Mandatory documentation standards for all Task tool delegations
+   - Sub-agent deliverable format with complete change summaries
+   - Main agent integration requirements for sub-agent work validation
+   - Quality gates ensuring sub-agents follow project standards and architecture
+
 ### 2025-08-02: Authentication System Resolution ✅
 **Issue Resolved**: Runtime error "Cannot read properties of undefined (reading 'currentUser')"
 

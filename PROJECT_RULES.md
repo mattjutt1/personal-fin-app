@@ -265,5 +265,73 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 - **CONTINUOUS HISTORY**: Maintain complete development history
 - **TEAM VISIBILITY**: All changes tracked for collaboration
 
+## Sub-Agent Documentation & Version Control Rules (MANDATORY)
+
+### Sub-Agent Compliance Requirements
+**MANDATORY**: All sub-agents (Task tool delegations) must follow the same documentation standards:
+
+1. **Sub-Agent Documentation Responsibilities**:
+   - Sub-agents must provide complete change summaries for main agent
+   - Include all files modified, added, or deleted
+   - Document any configuration changes or environment updates
+   - Note any new dependencies or version changes
+   - Report any issues encountered or technical debt created
+
+2. **Main Agent Integration Requirements**:
+   - Review all sub-agent outputs for completeness
+   - Update CLAUDE.md with sub-agent work summary
+   - Update CHANGELOG.md with consolidated version entry
+   - Create single git commit encompassing all sub-agent changes
+   - Verify all documentation is current and accurate
+
+3. **Sub-Agent Handoff Protocol**:
+   ```
+   Sub-Agent Deliverable Format:
+   - Summary of changes made
+   - List of files modified/added/deleted
+   - Configuration or environment changes
+   - New dependencies or version updates
+   - Issues encountered or technical debt
+   - Testing performed or required
+   - Documentation updates needed
+   ```
+
+4. **Quality Gates for Sub-Agent Work**:
+   - All sub-agent changes must pass project quality standards
+   - Sub-agents must follow anti-over-engineering principles
+   - Security rules (NON-NEGOTIABLE) apply to all sub-agent work
+   - Sub-agents must maintain hybrid consolidated-slice architecture
+
+### Sub-Agent Workflow Example
+```bash
+# After sub-agent completes work:
+1. Review sub-agent deliverable summary
+2. Validate all changes align with project rules
+3. Update CLAUDE.md with sub-agent work integration
+4. Update CHANGELOG.md with consolidated changes
+5. Stage all changes: git add .
+6. Commit with format: "feat: implement feature via sub-agent delegation
+
+- Sub-agent completed: [specific work]
+- Files modified: [list]
+- Updated CLAUDE.md and CHANGELOG.md
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+### Sub-Agent Documentation Standards
+- **Task Delegation**: Document why sub-agent was used and what expertise was needed
+- **Work Integration**: Show how sub-agent work fits into overall project architecture
+- **Quality Assurance**: Verify sub-agent work meets project standards
+- **Knowledge Transfer**: Ensure understanding of sub-agent changes for future maintenance
+
+### Sub-Agent Accountability
+- Main agent remains responsible for all project documentation
+- Sub-agent work must be validated and integrated properly
+- No sub-agent work committed without main agent review and documentation
+- All sub-agent contributions tracked in project history
+
 ---
 *These rules will be updated as the project evolves and we learn from real usage.*
