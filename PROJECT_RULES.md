@@ -199,5 +199,71 @@ The main Atlas Financial project has already researched and identified optimal o
 - **Progressive Enhancement**: Start without sub-agents, add when needed
 - **Convex-First**: All sub-agents work within Convex + Next.js constraints
 
+## Documentation & Version Control Rules (MANDATORY)
+
+### Automatic Documentation Updates
+**MANDATORY**: After EVERY code change, feature addition, or bug fix:
+
+1. **Update Memory Files**:
+   - Update `CLAUDE.md` with current context and changes made
+   - Update `CHANGELOG.md` with version entry following semantic versioning
+   - Update relevant README files if functionality changed
+   - Update any affected documentation files
+
+2. **Version Control Commit**:
+   - Stage all changes including documentation updates
+   - Create descriptive commit message following format:
+     ```
+     feat|fix|docs|chore: brief description
+     
+     - Detailed change 1
+     - Detailed change 2
+     - Updated CLAUDE.md and CHANGELOG.md
+     
+     🤖 Generated with [Claude Code](https://claude.ai/code)
+     
+     Co-Authored-By: Claude <noreply@anthropic.com>
+     ```
+   - Execute git commit after each logical unit of work
+
+3. **Version Numbering**:
+   - **MAJOR.MINOR.PATCH** format (e.g., 0.3.1)
+   - **PATCH**: Bug fixes, documentation updates (0.3.0 → 0.3.1)
+   - **MINOR**: New features, significant changes (0.3.0 → 0.4.0)
+   - **MAJOR**: Breaking changes, major refactors (0.3.0 → 1.0.0)
+
+### Documentation Update Checklist
+After each change, verify:
+- [ ] CLAUDE.md reflects current project state
+- [ ] CHANGELOG.md has new version entry with changes
+- [ ] README files updated if user-facing changes
+- [ ] Code comments added for complex logic
+- [ ] Environment variables documented if added
+- [ ] Git commit created with descriptive message
+
+### Example Workflow
+```bash
+# After making changes
+1. Update CLAUDE.md with session context
+2. Add CHANGELOG.md entry (e.g., [0.3.1] - Fixed authentication bug)
+3. Update README if needed
+4. Stage all changes: git add .
+5. Commit: git commit -m "fix: resolve auth token validation issue
+
+- Fixed undefined currentUser in useSubscription hook
+- Added proper error handling for auth failures
+- Updated CLAUDE.md and CHANGELOG.md
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>"
+```
+
+### Enforcement
+- **NO EXCEPTIONS**: Every code change must include documentation updates
+- **ATOMIC COMMITS**: Each feature/fix gets its own commit with docs
+- **CONTINUOUS HISTORY**: Maintain complete development history
+- **TEAM VISIBILITY**: All changes tracked for collaboration
+
 ---
 *These rules will be updated as the project evolves and we learn from real usage.*
