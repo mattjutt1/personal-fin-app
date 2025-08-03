@@ -13,6 +13,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Enable build validation (remove bypass flags in next.config.ts)
 - Complete Convex Auth API integration (restore full functionality)
 
+## [0.3.4] - 2025-08-02
+
+### Changed
+- Major repository cleanup removing 1.8GB of build artifacts and dependencies
+  - Removed node_modules directories (595MB + 12MB)
+  - Removed Python virtual environments (55MB)
+  - Removed Rust build artifacts (531MB) 
+  - Removed development tool environments (615MB)
+  - Cleaned up temporary files, logs, and cache files
+  - Removed Vercel deployment artifacts and local environment files
+- Repository size reduced from ~1.8GB to 27MB (98.5% reduction)
+- All commits successfully pushed to GitHub repository
+- Clean project state ready for production deployment setup
+
 ## [0.3.3] - 2025-08-02
 
 ### Added
