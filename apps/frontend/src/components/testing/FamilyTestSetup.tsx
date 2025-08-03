@@ -19,11 +19,11 @@ export default function FamilyTestSetup({ onComplete }: FamilyTestSetupProps) {
     budgetStartDate: new Date().toISOString().split('T')[0],
   });
 
-  const [testMembers, setTestMembers] = useState([
+  const testMembers = [
     { name: "Test Parent 1", email: "parent1@test-family.local", role: "manager" as const },
     { name: "Test Parent 2", email: "parent2@test-family.local", role: "member" as const },
     { name: "Test Teen", email: "teen@test-family.local", role: "member" as const },
-  ]);
+  ];
 
   const [createdFamily, setCreatedFamily] = useState<string | null>(null);
 
@@ -175,7 +175,7 @@ export default function FamilyTestSetup({ onComplete }: FamilyTestSetupProps) {
           <div className="bg-green-50 p-4 rounded-lg">
             <h3 className="text-lg font-medium text-green-900 mb-2">✅ Family Created!</h3>
             <div className="text-sm text-green-700">
-              Family "{familyData.name}" has been created with your budget settings.
+              Family &quot;{familyData.name}&quot; has been created with your budget settings.
             </div>
           </div>
 

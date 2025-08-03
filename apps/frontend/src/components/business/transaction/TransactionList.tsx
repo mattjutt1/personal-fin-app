@@ -3,7 +3,7 @@
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel";
-import { Transaction } from "../types";
+import { Transaction } from "@/types";
 import { TRANSACTION_CATEGORIES } from "./CategoryTiles";
 import { formatDistanceToNow } from "date-fns";
 import { User, Clock, TrendingUp, TrendingDown } from "lucide-react";
@@ -118,8 +118,8 @@ export default function TransactionList({
   }
 
   // Group transactions by date if showDate is true
-  const groupedTransactions = showDate 
-    ? transactions.reduce((acc, transaction) => {
+  const groupedTransactions: Record<string, Transaction[]> = showDate 
+    ? transactions.reduce((acc: Record<string, Transaction[]>, transaction: Transaction) => {
         const date = transaction.date;
         if (!acc[date]) {
           acc[date] = [];

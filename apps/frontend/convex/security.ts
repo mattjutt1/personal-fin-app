@@ -5,6 +5,8 @@
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 import { ConvexError } from "convex/values";
+import { QueryBuilder } from "convex/server";
+import { Doc, Id } from "./_generated/dataModel";
 
 // ====== ENCRYPTION & DATA PROTECTION ======
 
@@ -65,7 +67,7 @@ export class FinancialDataEncryption {
     
     // In production: Implement proper AES-256-GCM decryption
     const decoded = Buffer.from(encryptedData, 'base64').toString();
-    const amountMatch = decoded.match(/encrypted_(\d+(?:\.\d+)?)_/);
+    const amountMatch = decoded.match(/encrypted_(\d+(?:\.\d+)?)/);
     
     if (!amountMatch) {
       throw new ConvexError("Data corruption detected in encrypted financial data");
@@ -118,7 +120,7 @@ export class FamilyDataIsolation {
       // Layer 1: Basic family membership verification
       const membership = await ctx.db
         .query("familyMembers")
-        .withIndex("by_user_family", (q) => 
+        .withIndex("by_user_family", (q: any) => 
           q.eq("userId", userId).eq("familyId", familyId)
         )
         .first();
@@ -345,7 +347,7 @@ export class SecureFamilyInvitations {
     
     // Store invitation with enhanced security metadata
     await ctx.db.insert("familyInvitations", {
-      familyId,
+      familyId: familyId as Id<"families">,
       invitationToken,
       invitedBy,
       inviteeEmail,
@@ -414,7 +416,7 @@ export class SecureFamilyInvitations {
       // Find invitation by secure token
       const invitation = await ctx.db
         .query("familyInvitations")
-        .withIndex("by_token", (q) => q.eq("invitationToken", invitationToken))
+        .withIndex("by_token", (q: any) => q.eq("invitationToken", invitationToken))
         .first();
       
       if (!invitation) {
@@ -582,7 +584,7 @@ export const securityMonitoring = {
       // Collect recent activity for pattern analysis
       const recentActivity = await ctx.db
         .query("familyActivity")
-        .withIndex("by_family_time", (q) => 
+        .withIndex("by_family_time", (q: any) => 
           q.eq("familyId", args.familyId)
         )
         .filter((q) => q.gte(q.field("createdAt"), now - (24 * 60 * 60 * 1000))) // Last 24 hours
@@ -591,7 +593,7 @@ export const securityMonitoring = {
       const userActivity = recentActivity.filter(a => a.userId === args.userId);
       
       // Anomaly detection rules
-      const anomalies = [];
+      const anomalies: { type: string; severity: "MEDIUM" | "HIGH" | "CRITICAL" | "LOW"; details: string; }[] = [];
       
       // Rule 1: Excessive transaction creation (>50 transactions/hour)
       const recentTransactions = userActivity.filter(a => 

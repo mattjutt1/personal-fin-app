@@ -6,7 +6,7 @@ import { api } from "../../../convex/_generated/api";
 import { Plus, X, Check } from "lucide-react";
 import { clsx } from "clsx";
 import CategoryTiles from "./CategoryTiles";
-import { QuickExpenseForm, MobileActionProps } from "../types";
+import { QuickExpenseForm, MobileActionProps } from "@/types";
 
 interface QuickAddExpenseProps extends Omit<MobileActionProps, 'onSubmit'> {
   onSuccess?: () => void;

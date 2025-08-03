@@ -142,6 +142,23 @@ export default defineSchema({
       category: v.optional(v.string()),
       oldValue: v.optional(v.any()),
       newValue: v.optional(v.any()),
+      // Invitation-related metadata for family management
+      invitationCode: v.optional(v.string()),
+      inviteeEmail: v.optional(v.string()),
+      role: v.optional(v.string()),
+      expiresAt: v.optional(v.number()),
+      status: v.optional(v.string()),
+      acceptedAt: v.optional(v.number()),
+      acceptedBy: v.optional(v.string()),
+      // Budget-related metadata
+      amountChange: v.optional(v.number()),
+      newSpent: v.optional(v.number()),
+      reason: v.optional(v.string()),
+      transactionId: v.optional(v.string()),
+      budgetAmount: v.optional(v.number()),
+      remainingBudget: v.optional(v.number()),
+      oldSpent: v.optional(v.number()),
+      categoryId: v.optional(v.string()),
     })),
     // Temporal data
     createdAt: v.number(),
@@ -184,6 +201,23 @@ export default defineSchema({
       url: v.optional(v.string()),
       timestamp: v.number(),
       retryAttempt: v.optional(v.number()),
+      // Additional context fields for different operations
+      invitationCode: v.optional(v.string()),
+      familyId: v.optional(v.string()),
+      userId: v.optional(v.string()),
+      // Budget-related context fields
+      category: v.optional(v.string()),
+      amountChange: v.optional(v.number()),
+      reason: v.optional(v.string()),
+      transactionId: v.optional(v.string()),
+      date: v.optional(v.string()),
+      // Error resolution fields
+      resolvedBy: v.optional(v.string()),
+      resolution: v.optional(v.string()),
+      lastRetryAt: v.optional(v.number()),
+      originalErrorId: v.optional(v.string()),
+      // Maintenance actions
+      actions: v.optional(v.array(v.string())),
     }),
     // Recovery status
     resolved: v.boolean(),

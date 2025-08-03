@@ -1,11 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stripe } from '@/api-clients/stripe/server';
-import { fetchQuery } from "convex/nextjs";
-import { api } from "@/convex/_generated/api";
-import { convexAuthNextjsToken } from "@convex-dev/auth/nextjs/server";
+// TODO: Re-enable these imports when authentication system is complete
+// import { stripe } from '@/api-clients/stripe/server';
+// import { fetchQuery } from "convex/nextjs";
+// import { api } from "@/convex/_generated/api";
+// import { convexAuthNextjsToken } from "@convex-dev/auth/nextjs/server";
 
-export async function POST(req: NextRequest) {
+export async function POST(_req: NextRequest) {
   try {
+    // Authentication system not fully implemented yet
+    return NextResponse.json(
+      { 
+        error: 'Customer portal not available',
+        message: 'Authentication system is being updated. Please check back soon.' 
+      },
+      { status: 501 }
+    );
+
+    /* TODO: Uncomment when authentication system is complete
     // Check if Stripe is configured
     if (!stripe) {
       return NextResponse.json(
@@ -27,7 +38,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Fetch current user from Convex
-    const user = await fetchQuery(api.users.currentUser, {}, { token });
+    const user = await fetchQuery(api.users.currentUser, {}, { token }) as { stripeCustomerId?: string };
     
     if (!user) {
       return NextResponse.json(
@@ -50,6 +61,7 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json({ url: session.url });
+    */
   } catch (error) {
     console.error('Error creating portal session:', error);
     return NextResponse.json(

@@ -2,22 +2,23 @@
 // Handles authentication routes and integrates with existing API endpoints
 
 import { httpRouter } from "convex/server";
-import auth from "./auth.config";
+import { httpAction } from "./_generated/server";
+import { auth } from "./auth.config";
 
 const http = httpRouter();
 
-// Add Convex Auth HTTP routes
-// This handles OAuth callbacks, sign-in/sign-out endpoints, etc.
+// Add Convex Auth HTTP routes for authentication endpoints
 auth.addHttpRoutes(http);
 
 // Add custom HTTP routes for integration with Stripe and other services
 // These routes can be accessed at https://your-deployment.convex.site/api/custom-route
 
 // Health check endpoint
+
 http.route({
   path: "/health",
   method: "GET",
-  handler: async () => {
+  handler: httpAction(async (ctx, request) => {
     return new Response(
       JSON.stringify({ 
         status: "healthy", 
@@ -29,7 +30,7 @@ http.route({
         headers: { "Content-Type": "application/json" },
       }
     );
-  },
+  }),
 });
 
 // Integration endpoint for Stripe webhooks (if needed)
@@ -38,7 +39,7 @@ http.route({
 http.route({
   path: "/stripe/webhook-backup",
   method: "POST",
-  handler: async (request) => {
+  handler: httpAction(async (ctx, request) => {
     // This is a backup webhook endpoint
     // The primary webhook should be handled by /api/stripe-webhook in Next.js
     
@@ -60,7 +61,7 @@ http.route({
         headers: { "Content-Type": "application/json" },
       }
     );
-  },
+  }),
 });
 
 // Export the configured HTTP router

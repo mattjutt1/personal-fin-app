@@ -1,0 +1,16 @@
+{
+  "name": "personal-finance-app",
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "functions": {
+    "app/api/**": {
+      "maxDuration": 30
+    }
+  },
+  "env": {
+    "NEXT_PUBLIC_CONVEX_URL": "@convex_url",
+    "NODE_ENV": "production"
+  }
+}

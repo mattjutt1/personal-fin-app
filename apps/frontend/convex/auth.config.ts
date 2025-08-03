@@ -3,7 +3,7 @@ import GitHub from "@auth/core/providers/github";
 import Google from "@auth/core/providers/google";
 import { Password } from "@convex-dev/auth/providers/Password";
 
-export default convexAuth({
+export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
   providers: [
     Password({
       profile(params) {
@@ -40,10 +40,10 @@ export default convexAuth({
       const name = args.profile.name!;
 
       try {
-        // Find existing user by email
+        // Find existing user by email  
         const existingUser = await ctx.db
           .query("users")
-          .withIndex("by_email", (q) => q.eq("email", email))
+          .filter((q) => q.eq(q.field("email"), email))
           .first();
 
         if (existingUser) {

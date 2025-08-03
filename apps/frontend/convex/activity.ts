@@ -21,7 +21,7 @@ export const getFamilyActivity = query({
     // For incremental updates (real-time sync optimization)
     if (args.since) {
       const activities = await query
-        .filter((q) => q.gt(q.field("createdAt"), args.since))
+        .filter((q) => q.gt(q.field("createdAt"), args.since!))
         .take(args.limit || 50);
       
       return {
@@ -265,11 +265,8 @@ export const triggerPushNotification = mutation({
         userId: "system",
         userName: "System",
         action: "transaction_added", // Using existing action type
-        description: `Push notification: ${args.title} - ${args.body}`,
-        metadata: {
-          notificationTargets: notificationTargets.length,
-          ...args.data,
-        },
+        description: `Push notification sent to ${notificationTargets.length} members: ${args.title} - ${args.body}`,
+        metadata: args.data,
         createdAt: now,
         notificationSent: true,
       });

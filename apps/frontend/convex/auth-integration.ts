@@ -128,8 +128,6 @@ export const updateUserSubscriptionStatus = mutation({
           : "subscription_updated",
         subscriptionTier: args.subscriptionStatus,
         metadata: {
-          stripeCustomerId: args.stripeCustomerId,
-          stripeSubscriptionId: args.stripeSubscriptionId,
           previousTier: user.subscriptionStatus,
         },
         createdAt: now,
@@ -166,8 +164,6 @@ export const updateUserSubscriptionStatus = mutation({
         errorType: "SubscriptionUpdateError",
         errorMessage: error instanceof Error ? error.message : "Unknown subscription update error",
         context: {
-          email: args.email,
-          subscriptionStatus: args.subscriptionStatus,
           timestamp: now,
           retryAttempt: 0,
         },
@@ -396,7 +392,6 @@ export const createFamilyWithSubscriptionLimits = mutation({
         errorType: "FamilyCreationError",
         errorMessage: error instanceof Error ? error.message : "Unknown family creation error",
         context: {
-          familyName: args.familyName,
           timestamp: now,
           retryAttempt: 0,
         },

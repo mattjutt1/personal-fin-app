@@ -1,7 +1,8 @@
 // Event Bus - Inter-Slice Communication System
 // Replaces direct cross-slice database calls with proper event-driven architecture
 
-import { SliceEventType } from '../types';
+import { SliceEventType } from '@/types/shared';
+import { Transaction } from '@/types/domain/transaction';
 
 type EventHandler<T extends SliceEventType = SliceEventType> = (event: T) => Promise<void> | void;
 
@@ -150,7 +151,7 @@ export const EventHelpers = {
   async emitTransactionCreated(
     familyId: string,
     userId: string,
-    transaction: any
+    transaction: Transaction
   ): Promise<void> {
     const event = EventHelpers.createTransactionEvent(
       'transaction.created',

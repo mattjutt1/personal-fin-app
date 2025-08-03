@@ -1,7 +1,7 @@
 "use client";
 
 import { Home, Coffee, PiggyBank } from "lucide-react";
-import { TransactionCategory } from "../types";
+import { TransactionCategoryUI } from "@/types/domain/transaction";
 import { clsx } from "clsx";
 
 interface CategoryTilesProps {
@@ -11,7 +11,7 @@ interface CategoryTilesProps {
 }
 
 // Pre-defined categories based on validated 3-category system
-const TRANSACTION_CATEGORIES: TransactionCategory[] = [
+const TRANSACTION_CATEGORIES: TransactionCategoryUI[] = [
   {
     id: "fixed",
     name: "Fixed",

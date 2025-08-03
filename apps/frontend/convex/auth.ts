@@ -268,12 +268,13 @@ export const acceptFamilyInvitation = mutation({
       }
 
       // Add user to family
+      const memberRole = invitation.metadata?.role === "manager" ? "manager" : "member";
       const memberId = await ctx.db.insert("familyMembers", {
         familyId: invitation.familyId,
         userId: args.userId,
         name: args.userName,
         email: args.userEmail,
-        role: invitation.metadata?.role || "member",
+        role: memberRole,
         joinedAt: now,
         lastActiveAt: now,
         isActive: true,

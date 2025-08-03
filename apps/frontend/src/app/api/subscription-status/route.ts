@@ -1,12 +1,35 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { stripe } from '@/api-clients/stripe/server';
-import { fetchQuery } from "convex/nextjs";
-import { api } from "@/convex/_generated/api";
-import { convexAuthNextjsToken } from "@convex-dev/auth/nextjs/server";
+// TODO: Re-enable these imports when authentication system is complete
+// import { stripe } from '@/api-clients/stripe/server';
+// import { fetchQuery } from "convex/nextjs";
+// import { api } from "@/convex/_generated/api";
+// import { convexAuthNextjsToken } from "@convex-dev/auth/nextjs/server";
 import type { SubscriptionStatus } from '@/hooks/useSubscription';
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   try {
+    // Authentication system not fully implemented yet
+    // Return default free tier status for testing
+    const subscriptionStatus: SubscriptionStatus = {
+      isAuthenticated: false, // Set to false since auth isn't working
+      isPremium: false,
+      isTrialing: false,
+      status: 'free',
+      features: {
+        bankIntegration: false,
+        unlimitedFamilies: false,
+        predictiveAlerts: false,
+        advancedAnalytics: false,
+        prioritySupport: false,
+        exportData: false,
+        automatedCategorization: false,
+        billReminders: false,
+      },
+    };
+
+    return NextResponse.json(subscriptionStatus);
+
+    /* TODO: Uncomment when authentication system is complete
     // Check if Stripe is configured
     if (!stripe) {
       return NextResponse.json(
@@ -28,7 +51,15 @@ export async function GET(req: NextRequest) {
     }
 
     // Fetch current user from Convex
-    const user = await fetchQuery(api.users.currentUser, {}, { token });
+    const user = await fetchQuery(api.users.currentUser, {}, { token }) as { 
+      subscriptionStatus: string, 
+      stripeCustomerId?: string, 
+      hasAccessToBankIntegration: boolean, 
+      hasAccessToUnlimitedFamilies: boolean, 
+      hasAccessToPredictiveAlerts: boolean, 
+      hasAccessToAdvancedAnalytics: boolean, 
+      trialEndDate?: number 
+    };
     
     if (!user) {
       return NextResponse.json(
@@ -83,6 +114,7 @@ export async function GET(req: NextRequest) {
     }
 
     return NextResponse.json(subscriptionStatus);
+    */
   } catch (error) {
     console.error('Error fetching subscription status:', error);
     return NextResponse.json(

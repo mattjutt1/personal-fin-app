@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function TestSetupPage() {
   const [results, setResults] = useState<string[]>([]);
@@ -109,34 +110,34 @@ export default function TestSetupPage() {
           <div className="grid md:grid-cols-3 gap-4 mb-6">
             <div className="bg-white rounded-lg p-4 border-2 border-green-500">
               <h3 className="font-semibold text-green-700 mb-2">Premium User Test</h3>
-              <a 
+              <Link 
                 href="/?user=premium" 
                 className="block text-center bg-green-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
               >
                 Test as Premium User
-              </a>
+              </Link>
               <p className="text-xs text-gray-600 mt-2">All features unlocked</p>
             </div>
             
             <div className="bg-white rounded-lg p-4 border-2 border-blue-500">
               <h3 className="font-semibold text-blue-700 mb-2">Trial User Test</h3>
-              <a 
+              <Link 
                 href="/?user=trial" 
                 className="block text-center bg-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
               >
                 Test as Trial User
-              </a>
+              </Link>
               <p className="text-xs text-gray-600 mt-2">14-day trial active</p>
             </div>
             
             <div className="bg-white rounded-lg p-4 border-2 border-gray-500">
               <h3 className="font-semibold text-gray-700 mb-2">Free User Test</h3>
-              <a 
+              <Link 
                 href="/?user=free" 
                 className="block text-center bg-gray-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
               >
                 Test as Free User
-              </a>
+              </Link>
               <p className="text-xs text-gray-600 mt-2">Basic features only</p>
             </div>
           </div>
@@ -144,7 +145,7 @@ export default function TestSetupPage() {
           <div className="bg-white rounded-lg p-4">
             <h3 className="font-semibold text-gray-900 mb-3">Test Features:</h3>
             <ul className="space-y-2 text-sm text-gray-700">
-              <li>• <a href="/" className="text-blue-600 underline">Home</a> - Check subscription badge in header</li>
+              <li>• <Link href="/" className="text-blue-600 underline">Home</Link> - Check subscription badge in header</li>
               <li>• <a href="/bank-sync" className="text-blue-600 underline">Bank Sync</a> - Premium feature (paywall for free users)</li>
               <li>• <a href="/settings" className="text-blue-600 underline">Settings</a> - View subscription status and manage account</li>
               <li>• <a href="/pricing" className="text-blue-600 underline">Pricing</a> - Upgrade flow and subscription plans</li>

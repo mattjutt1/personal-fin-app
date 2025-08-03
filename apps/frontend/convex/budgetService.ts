@@ -67,8 +67,8 @@ export const updateCategorySpending = mutation({
           category: args.category,
           oldSpent: budgetCategory.currentSpent,
           newSpent,
-          budgetAmount: budgetCategory.budgetAmount,
-          remainingBudget: budgetCategory.budgetAmount - newSpent,
+          budgetAmount: budgetCategory.budgetedAmount,
+          remainingBudget: budgetCategory.budgetedAmount - newSpent,
         },
         timestamp: now,
       };
@@ -120,7 +120,6 @@ export const invalidateDailyBudget = mutation({
         // Mark as invalid for recalculation
         await ctx.db.patch(dailyBudget._id, { 
           isValid: false,
-          updatedAt: now,
         });
 
         return {
@@ -188,11 +187,10 @@ export const getCategoryBudget = query({
         familyId: budgetCategory.familyId,
         name: budgetCategory.name,
         type: budgetCategory.type,
-        budgetAmount: budgetCategory.budgetAmount,
+        budgetAmount: budgetCategory.budgetedAmount,
         currentSpent: budgetCategory.currentSpent,
-        remainingBudget: budgetCategory.budgetAmount - budgetCategory.currentSpent,
+        remainingBudget: budgetCategory.budgetedAmount - budgetCategory.currentSpent,
         isActive: budgetCategory.isActive,
-        sortOrder: budgetCategory.sortOrder,
         createdAt: budgetCategory.createdAt,
         updatedAt: budgetCategory.updatedAt,
       },
@@ -220,15 +218,14 @@ export const getAllCategoryBudgets = query({
       familyId: category.familyId,
       name: category.name,
       type: category.type,
-      budgetAmount: category.budgetAmount,
+      budgetAmount: category.budgetedAmount,
       currentSpent: category.currentSpent,
-      remainingBudget: category.budgetAmount - category.currentSpent,
-      spentPercentage: category.budgetAmount > 0 
-        ? (category.currentSpent / category.budgetAmount) * 100 
+      remainingBudget: category.budgetedAmount - category.currentSpent,
+      spentPercentage: category.budgetedAmount > 0 
+        ? (category.currentSpent / category.budgetedAmount) * 100 
         : 0,
-      isOverBudget: category.currentSpent > category.budgetAmount,
+      isOverBudget: category.currentSpent > category.budgetedAmount,
       isActive: category.isActive,
-      sortOrder: category.sortOrder,
       createdAt: category.createdAt,
       updatedAt: category.updatedAt,
     }));
@@ -313,7 +310,7 @@ export const calculateDailyBudget = mutation({
       // Calculate total budget and spent amounts
       const totals = budgetCategories.reduce(
         (acc, category) => ({
-          totalBudget: acc.totalBudget + category.budgetAmount,
+          totalBudget: acc.totalBudget + category.budgetedAmount,
           totalSpent: acc.totalSpent + category.currentSpent,
         }),
         { totalBudget: 0, totalSpent: 0 }
@@ -332,9 +329,9 @@ export const calculateDailyBudget = mutation({
       const savingsCategory = budgetCategories.find(c => c.type === "savings");
       const variableCategory = budgetCategories.find(c => c.type === "variable");
 
-      const fixedAmount = fixedCategory?.budgetAmount || 0;
-      const savingsAmount = savingsCategory?.budgetAmount || 0;
-      const variableAmount = variableCategory?.budgetAmount || 0;
+      const fixedAmount = fixedCategory?.budgetedAmount || 0;
+      const savingsAmount = savingsCategory?.budgetedAmount || 0;
+      const variableAmount = variableCategory?.budgetedAmount || 0;
 
       // Available for daily spending = Variable budget - Variable spent
       const availableVariable = Math.max(0, variableAmount - (variableCategory?.currentSpent || 0));
@@ -353,16 +350,28 @@ export const calculateDailyBudget = mutation({
       const todaySpent = todayTransactions.reduce((sum, t) => sum + t.amount, 0);
       const remainingBudget = dailyBudgetAmount - todaySpent;
 
+      // Calculate category-specific spending
+      const fixedSpent = todayTransactions
+        .filter(t => t.category === "fixed")
+        .reduce((sum, t) => sum + t.amount, 0);
+      const variableSpent = todayTransactions
+        .filter(t => t.category === "variable")
+        .reduce((sum, t) => sum + t.amount, 0);
+      const savingsContributed = todayTransactions
+        .filter(t => t.category === "savings")
+        .reduce((sum, t) => sum + t.amount, 0);
+
       const dailyBudgetData = {
         familyId: args.familyId,
         date: args.date,
         dailyBudgetAmount,
         totalSpent: todaySpent,
         remainingBudget,
-        isValid: true,
+        fixedSpent,
+        variableSpent,
+        savingsContributed,
         calculatedAt: now,
-        createdAt: now,
-        updatedAt: now,
+        isValid: true,
       };
 
       // Check if cached entry exists
@@ -381,9 +390,11 @@ export const calculateDailyBudget = mutation({
           dailyBudgetAmount,
           totalSpent: todaySpent,
           remainingBudget,
-          isValid: true,
+          fixedSpent,
+          variableSpent,
+          savingsContributed,
           calculatedAt: now,
-          updatedAt: now,
+          isValid: true,
         });
         dailyBudgetId = existingBudget._id;
       } else {

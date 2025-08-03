@@ -8,7 +8,7 @@ import {
   ServiceResponse,
   TransactionCategory,
   PaginationOptions 
-} from '../types';
+} from '@/types/shared';
 
 /**
  * Transaction Management Service Interface

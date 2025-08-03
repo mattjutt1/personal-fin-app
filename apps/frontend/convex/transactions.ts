@@ -1,6 +1,7 @@
 // Transaction Management - Production-ready with family sync and optimistic updates
 // Optimized for <500ms real-time sync across family members
 
+import { api } from "./_generated/api";
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 import { ConvexError } from "convex/values";
@@ -99,7 +100,7 @@ export const createTransaction = mutation({
       // Trigger budget updates via separate service (maintains slice boundaries)
       if (args.type === "expense") {
         // Call budget service to update category spending
-        await ctx.runMutation("budgetService:updateCategorySpending", {
+        await ctx.runMutation(api.budgetService.updateCategorySpending, {
           familyId: args.familyId,
           category: args.category,
           amountChange: args.amount,
@@ -109,7 +110,7 @@ export const createTransaction = mutation({
         });
 
         // Invalidate daily budget cache
-        await ctx.runMutation("budgetService:invalidateDailyBudget", {
+        await ctx.runMutation(api.budgetService.invalidateDailyBudget, {
           familyId: args.familyId,
           date: args.date,
           userId: args.userId,
@@ -181,7 +182,7 @@ export const getFamilyTransactions = query({
       query = ctx.db
         .query("transactions")
         .withIndex("by_family_category", (q) => 
-          q.eq("familyId", args.familyId).eq("category", args.category)
+          q.eq("familyId", args.familyId).eq("category", args.category!)
         )
         .order("desc");
     }
@@ -190,7 +191,7 @@ export const getFamilyTransactions = query({
       query = ctx.db
         .query("transactions")
         .withIndex("by_family_type", (q) => 
-          q.eq("familyId", args.familyId).eq("type", args.type)
+          q.eq("familyId", args.familyId).eq("type", args.type!)
         )
         .order("desc");
     }
@@ -310,7 +311,7 @@ export const updateTransaction = mutation({
       await ctx.db.patch(args.transactionId, updates);
 
       // Invalidate daily budget cache via budget service
-      await ctx.runMutation("budgetService:invalidateDailyBudget", {
+      await ctx.runMutation(api.budgetService.invalidateDailyBudget, {
         familyId: transaction.familyId,
         date: transaction.date,
         userId: args.userId,
@@ -389,7 +390,7 @@ export const deleteTransaction = mutation({
 
       // Update category spending via budget service (reverse the transaction amount)
       if (transaction.type === "expense") {
-        await ctx.runMutation("budgetService:updateCategorySpending", {
+        await ctx.runMutation(api.budgetService.updateCategorySpending, {
           familyId: transaction.familyId,
           category: transaction.category,
           amountChange: -transaction.amount, // Negative to reverse the spending
@@ -400,7 +401,7 @@ export const deleteTransaction = mutation({
       }
 
       // Invalidate daily budget cache via budget service
-      await ctx.runMutation("budgetService:invalidateDailyBudget", {
+      await ctx.runMutation(api.budgetService.invalidateDailyBudget, {
         familyId: transaction.familyId,
         date: transaction.date,
         userId: args.userId,

@@ -4,6 +4,7 @@
 import { mutation, query } from "./_generated/server";
 import { v } from "convex/values";
 import { ConvexError } from "convex/values";
+import type { Id } from "./_generated/dataModel";
 
 // Health check endpoint for monitoring
 export const getSystemHealth = query({
@@ -36,11 +37,12 @@ export const getSystemHealth = query({
 
       // Family-specific health if requested
       if (args.familyId) {
-        const familyErrors = recentErrors.filter(e => e.familyId === args.familyId);
+        const familyId = args.familyId; // Extract to ensure TypeScript knows it's not undefined
+        const familyErrors = recentErrors.filter(e => e.familyId === familyId);
         const familySyncConflicts = await ctx.db
           .query("syncState")
           .withIndex("by_conflicts", (q) => 
-            q.eq("familyId", args.familyId).eq("hasConflict", true)
+            q.eq("familyId", familyId as Id<"families">).eq("hasConflict", true)
           )
           .collect();
 
@@ -50,7 +52,7 @@ export const getSystemHealth = query({
         // Check recent family activity for performance
         const recentActivity = await ctx.db
           .query("familyActivity")
-          .withIndex("by_family_time", (q) => q.eq("familyId", args.familyId))
+          .withIndex("by_family_time", (q) => q.eq("familyId", familyId))
           .filter((q) => q.gte(q.field("createdAt"), oneMinuteAgo))
           .collect();
 
@@ -117,7 +119,6 @@ export const retryFailedOperation = mutation({
         context: {
           ...errorLog.context,
           retryAttempt,
-          lastRetryAt: now,
         },
       });
 
@@ -157,7 +158,6 @@ export const retryFailedOperation = mutation({
         errorType: "RetryError",
         errorMessage: error instanceof Error ? error.message : "Unknown retry error",
         context: {
-          originalErrorId: args.errorLogId,
           timestamp: now,
           retryAttempt: 0,
         },
@@ -197,15 +197,19 @@ export const getPerformanceMetrics = query({
       .query("errorLogs")
       .filter((q) => q.gte(q.field("createdAt"), sinceTimestamp));
 
-    let activityQuery = ctx.db
-      .query("familyActivity")
-      .filter((q) => q.gte(q.field("createdAt"), sinceTimestamp));
+    let activityQuery;
 
     if (args.familyId) {
-      errorQuery = errorQuery.filter((q) => q.eq(q.field("familyId"), args.familyId));
-      activityQuery = activityQuery.withIndex("by_family_time", (q) => 
-        q.eq("familyId", args.familyId)
-      ).filter((q) => q.gte(q.field("createdAt"), sinceTimestamp));
+      const familyId = args.familyId; // Extract to ensure TypeScript knows it's not undefined
+      errorQuery = errorQuery.filter((q) => q.eq(q.field("familyId"), familyId));
+      activityQuery = ctx.db
+        .query("familyActivity")
+        .withIndex("by_family_time", (q) => q.eq("familyId", familyId))
+        .filter((q) => q.gte(q.field("createdAt"), sinceTimestamp));
+    } else {
+      activityQuery = ctx.db
+        .query("familyActivity")
+        .filter((q) => q.gte(q.field("createdAt"), sinceTimestamp));
     }
 
     const [errors, activities] = await Promise.all([
@@ -514,14 +518,19 @@ export const performMaintenance = mutation({
             break;
 
           case "resolve_sync_conflicts":
-            let conflictQuery = ctx.db
-              .query("syncState")
-              .filter((q) => q.eq(q.field("hasConflict"), true));
+            let conflictQuery;
 
             if (args.familyId) {
-              conflictQuery = conflictQuery.withIndex("by_conflicts", (q) => 
-                q.eq("familyId", args.familyId).eq("hasConflict", true)
-              );
+              const familyId = args.familyId; // Extract to ensure TypeScript knows it's not undefined
+              conflictQuery = ctx.db
+                .query("syncState")
+                .withIndex("by_conflicts", (q) => 
+                  q.eq("familyId", familyId).eq("hasConflict", true)
+                );
+            } else {
+              conflictQuery = ctx.db
+                .query("syncState")
+                .filter((q) => q.eq(q.field("hasConflict"), true));
             }
 
             const conflicts = await conflictQuery.collect();
@@ -534,14 +543,19 @@ export const performMaintenance = mutation({
             break;
 
           case "recalculate_budgets":
-            let budgetQuery = ctx.db
-              .query("dailyBudgets")
-              .filter((q) => q.eq(q.field("isValid"), false));
+            let budgetQuery;
 
             if (args.familyId) {
-              budgetQuery = budgetQuery.withIndex("by_validity", (q) => 
-                q.eq("familyId", args.familyId).eq("isValid", false)
-              );
+              const familyId = args.familyId; // Extract to ensure TypeScript knows it's not undefined
+              budgetQuery = ctx.db
+                .query("dailyBudgets")
+                .withIndex("by_validity", (q) => 
+                  q.eq("familyId", familyId).eq("isValid", false)
+                );
+            } else {
+              budgetQuery = ctx.db
+                .query("dailyBudgets")
+                .filter((q) => q.eq(q.field("isValid"), false));
             }
 
             const invalidBudgets = await budgetQuery.collect();
@@ -553,14 +567,18 @@ export const performMaintenance = mutation({
 
           case "cleanup_old_activity":
             const sixtyDaysAgo = now - (60 * 24 * 60 * 60 * 1000);
-            let activityQuery = ctx.db
-              .query("familyActivity")
-              .filter((q) => q.lt(q.field("createdAt"), sixtyDaysAgo));
+            let activityQuery;
 
             if (args.familyId) {
-              activityQuery = activityQuery.withIndex("by_family_time", (q) => 
-                q.eq("familyId", args.familyId)
-              ).filter((q) => q.lt(q.field("createdAt"), sixtyDaysAgo));
+              const familyId = args.familyId; // Extract to ensure TypeScript knows it's not undefined
+              activityQuery = ctx.db
+                .query("familyActivity")
+                .withIndex("by_family_time", (q) => q.eq("familyId", familyId))
+                .filter((q) => q.lt(q.field("createdAt"), sixtyDaysAgo));
+            } else {
+              activityQuery = ctx.db
+                .query("familyActivity")
+                .filter((q) => q.lt(q.field("createdAt"), sixtyDaysAgo));
             }
 
             const oldActivity = await activityQuery.collect();

@@ -104,32 +104,7 @@ export const calculateDailyBudget = query({
       calculatedAt: Date.now(),
     };
 
-    // Update cache for next request
-    if (cachedBudget) {
-      await ctx.db.patch(cachedBudget._id, {
-        dailyBudgetAmount,
-        totalSpent: spending.totalSpent,
-        remainingBudget,
-        fixedSpent: spending.fixedSpent,
-        variableSpent: spending.variableSpent,
-        savingsContributed: spending.savingsContributed,
-        calculatedAt: Date.now(),
-        isValid: true,
-      });
-    } else {
-      await ctx.db.insert("dailyBudgets", {
-        familyId: args.familyId,
-        date: args.date,
-        dailyBudgetAmount,
-        totalSpent: spending.totalSpent,
-        remainingBudget,
-        fixedSpent: spending.fixedSpent,
-        variableSpent: spending.variableSpent,
-        savingsContributed: spending.savingsContributed,
-        calculatedAt: Date.now(),
-        isValid: true,
-      });
-    }
+    // Note: Cache updates would require a separate mutation function
 
     return result;
   },

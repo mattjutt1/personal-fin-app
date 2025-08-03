@@ -3,7 +3,7 @@
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { Id } from "../../../convex/_generated/dataModel";
-import { FamilyActivity } from "../types";
+import { FamilyActivity } from "@/types";
 import { formatDistanceToNow } from "date-fns";
 import { Users, Plus, Edit, Trash2, Bell } from "lucide-react";
 import { clsx } from "clsx";
@@ -95,10 +95,12 @@ export default function FamilyActivityFeed({
 }: FamilyActivityFeedProps) {
   // For now, we'll simulate the activity feed since we need to create the proper Convex query
   // TODO: Create convex/activity.ts query for getFamilyActivity
+  // TODO: Replace with actual Convex query when activity.ts is implemented
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const activities = useQuery(api.activity?.getFamilyActivity as any, {
     familyId,
     limit,
-  });
+  }) as FamilyActivity[] | undefined;
 
   if (activities === undefined) {
     return (
@@ -164,7 +166,7 @@ export default function FamilyActivityFeed({
     }
   ];
 
-  const displayActivities = activities || mockActivities;
+  const displayActivities: FamilyActivity[] = activities || mockActivities;
 
   if (!displayActivities || displayActivities.length === 0) {
     return (

@@ -7,9 +7,8 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has type errors.
-    ignoreBuildErrors: true,
+    // TypeScript validation enabled for production readiness
+    ignoreBuildErrors: false,
   },
 };
 

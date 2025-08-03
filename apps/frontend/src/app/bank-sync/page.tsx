@@ -65,7 +65,7 @@ export default function BankSyncPage() {
             
             <div className="mt-8 text-center">
               <p className="text-sm text-gray-600 mb-4">
-                Don't see your bank? Search from 12,000+ supported institutions
+                Don&apos;t see your bank? Search from 12,000+ supported institutions
               </p>
               <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
                 Search All Banks

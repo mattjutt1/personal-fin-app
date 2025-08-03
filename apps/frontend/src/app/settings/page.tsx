@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthActions } from "@convex-dev/auth/react";
 import { useSubscription } from "@/hooks/useSubscription";
-import { PaywallGate } from "@/components/business/monetization/PaywallGate";
 
 export default function SettingsPage() {
   const router = useRouter();

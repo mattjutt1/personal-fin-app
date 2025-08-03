@@ -2,7 +2,7 @@
 // Atomic Vertical Slice: Self-contained types for transaction management
 
 import { Id } from "../../../convex/_generated/dataModel";
-import { TransactionData, TransactionCategory, TransactionType } from "../../shared/types";
+import { TransactionData, TransactionCategory, TransactionType } from "@/types/shared";
 
 // Extend shared types with Convex-specific IDs
 export interface Transaction extends Omit<TransactionData, '_id' | 'familyId'> {
@@ -62,7 +62,7 @@ export interface FamilyActivity {
   action: "transaction_added" | "transaction_updated" | "transaction_deleted";
   targetId: Id<"transactions">;
   description: string;
-  metadata: Record<string, any>;
+  metadata: Record<string, unknown>;
   createdAt: number;
   notificationSent: boolean;
 }

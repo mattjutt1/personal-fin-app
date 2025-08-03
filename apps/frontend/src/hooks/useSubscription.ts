@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { useAuthToken } from "@convex-dev/auth/react";
-import { useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
 
 export interface SubscriptionStatus {
   isAuthenticated: boolean;
@@ -24,6 +22,8 @@ export interface SubscriptionStatus {
     advancedAnalytics: boolean;
     prioritySupport: boolean;
     exportData: boolean;
+    automatedCategorization: boolean;
+    billReminders: boolean;
   };
 }
 
@@ -42,13 +42,15 @@ export function useSubscription(): SubscriptionStatus {
       advancedAnalytics: false,
       prioritySupport: false,
       exportData: false,
+      automatedCategorization: false,
+      billReminders: false,
     },
   });
 
   // Temporarily skip problematic API calls for testing
   // TODO: Re-enable after fixing Convex API compilation
   const currentUser = null; // useQuery(api.users.currentUser, isAuthenticated ? {} : "skip");
-  const subscriptionData = null; // useQuery(api["auth-integration"].getUserSubscriptionStatus, (!isAuthenticated || !currentUser?.email) ? "skip" : { email: currentUser.email });
+  const subscriptionData: SubscriptionStatus | null = null; // useQuery(api["auth-integration"].getUserSubscriptionStatus, (!isAuthenticated || !currentUser?.email) ? "skip" : { email: currentUser.email });
 
   useEffect(() => {
     // DEMO: Check for test user simulation via URL parameter
@@ -73,6 +75,8 @@ export function useSubscription(): SubscriptionStatus {
             advancedAnalytics: true,
             prioritySupport: true,
             exportData: true,
+            automatedCategorization: true,
+            billReminders: true,
           },
         });
         return;
@@ -96,6 +100,8 @@ export function useSubscription(): SubscriptionStatus {
             advancedAnalytics: true,
             prioritySupport: true,
             exportData: true,
+            automatedCategorization: true,
+            billReminders: true,
           },
         });
         return;
@@ -117,6 +123,8 @@ export function useSubscription(): SubscriptionStatus {
             advancedAnalytics: false,
             prioritySupport: false,
             exportData: false,
+            automatedCategorization: false,
+            billReminders: false,
           },
         });
         return;
@@ -137,28 +145,32 @@ export function useSubscription(): SubscriptionStatus {
           advancedAnalytics: false,
           prioritySupport: false,
           exportData: false,
+          automatedCategorization: false,
+          billReminders: false,
         },
       });
       return;
     }
 
-    if (subscriptionData) {
-      // Update subscription from Convex data
-      setSubscription({
-        isAuthenticated: subscriptionData.isAuthenticated,
-        userId: subscriptionData.userId?.toString(),
-        email: subscriptionData.email,
-        name: subscriptionData.name,
-        isPremium: subscriptionData.isPremium,
-        isTrialing: subscriptionData.isTrialing,
-        subscriptionId: subscriptionData.stripeSubscriptionId,
-        customerId: subscriptionData.stripeCustomerId,
-        trialEndsAt: subscriptionData.trialEndsAt,
-        subscriptionEndDate: subscriptionData.subscriptionEndDate,
-        status: subscriptionData.subscriptionStatus,
-        features: subscriptionData.features,
-      });
-    } else if (isAuthenticated && !subscriptionData) {
+    // TODO: Re-enable when Convex API compilation is fixed
+    // if (subscriptionData) {
+    //   // Update subscription from Convex data
+    //   setSubscription({
+    //     isAuthenticated: subscriptionData.isAuthenticated,
+    //     userId: subscriptionData.userId?.toString(),
+    //     email: subscriptionData.email,
+    //     name: subscriptionData.name,
+    //     isPremium: subscriptionData.isPremium,
+    //     isTrialing: subscriptionData.isTrialing,
+    //     subscriptionId: subscriptionData.stripeSubscriptionId,
+    //     customerId: subscriptionData.stripeCustomerId,
+    //     trialEndsAt: subscriptionData.trialEndsAt,
+    //     subscriptionEndDate: subscriptionData.subscriptionEndDate,
+    //     status: subscriptionData.subscriptionStatus,
+    //     features: subscriptionData.features,
+    //   });
+    // } else 
+    if (isAuthenticated && !subscriptionData) {
       // User is authenticated but we don't have subscription data yet
       // Show loading state or default to free tier
       setSubscription(prev => ({

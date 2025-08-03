@@ -2,6 +2,7 @@
 
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 function WelcomePremiumContent() {
   const searchParams = useSearchParams();
@@ -45,7 +46,7 @@ function WelcomePremiumContent() {
             Something went wrong
           </h1>
           <p className="text-gray-600 mb-6">
-            We couldn't verify your subscription. Please contact support if you were charged.
+            We couldn&apos;t verify your subscription. Please contact support if you were charged.
           </p>
           <a
             href="/pricing"
@@ -71,7 +72,7 @@ function WelcomePremiumContent() {
             Your 14-day free trial has started
           </p>
           <p className="text-gray-500">
-            You won't be charged until {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleDateString()}
+            You won&apos;t be charged until {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleDateString()}
           </p>
         </div>
 
@@ -166,7 +167,7 @@ function WelcomePremiumContent() {
               </p>
             </a>
             
-            <a
+            <Link
               href="/"
               className="block bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
             >
@@ -175,7 +176,7 @@ function WelcomePremiumContent() {
               <p className="text-sm text-gray-600">
                 Set up your family budget with our smart recommendations
               </p>
-            </a>
+            </Link>
             
             <a
               href="/help"

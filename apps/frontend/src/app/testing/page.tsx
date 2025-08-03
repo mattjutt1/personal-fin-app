@@ -13,82 +13,117 @@ export default function TestingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-8">
+    <div className="min-h-screen bg-gray-100">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-8">
+              <div className="flex-shrink-0">
+                <h1 className="text-xl font-bold text-gray-900">Atlas Family Budget</h1>
+              </div>
+              <nav className="hidden md:flex space-x-8">
+                <a href="/" className="text-gray-600 hover:text-gray-900">Dashboard</a>
+                <a href="/budget" className="text-gray-600 hover:text-gray-900">Budget</a>
+                <a href="/transactions" className="text-gray-600 hover:text-gray-900">Transactions</a>
+                <a href="/analytics" className="text-gray-600 hover:text-gray-900">Analytics</a>
+                <a href="/testing" className="text-blue-600 font-medium">Testing</a>
+              </nav>
+            </div>
+            <a
+              href="/"
+              className="text-gray-600 hover:text-gray-900 text-sm font-medium"
+            >
+              ← Back to Dashboard
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Page Header */}
+        <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Simple Daily Family Budget - User Testing
+            User Testing Environment
           </h1>
-          <p className="text-gray-600">
-            MVP Testing Environment - Create test families and validate core workflows
+          <p className="text-gray-600 text-lg">
+            Create test families and validate core workflows
           </p>
         </div>
 
         {/* Status Banner */}
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-          <div className="flex items-center">
-            <span className="text-2xl mr-2">✅</span>
+        <div className="bg-green-50 border border-green-200 rounded-xl p-6 mb-8">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+              <span className="text-2xl">✅</span>
+            </div>
             <div>
-              <div className="font-bold">MVP Status: Ready for User Testing</div>
-              <div className="text-sm">Architecture fixes complete • Real-time sync operational • Mobile-optimized</div>
+              <div className="text-lg font-bold text-green-900">MVP Status: Ready for User Testing</div>
+              <div className="text-green-700">Architecture fixes complete • Real-time sync operational • Desktop-optimized</div>
             </div>
           </div>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="mb-6">
-          <div className="border-b border-gray-200">
-            <nav className="-mb-px flex space-x-8">
-              <button
-                onClick={() => setActiveTab("setup")}
-                className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                  activeTab === "setup"
-                    ? "border-blue-500 text-blue-600"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                }`}
-              >
-                Family Setup
-              </button>
-              <button
-                onClick={() => setActiveTab("guide")}
-                className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                  activeTab === "guide"
-                    ? "border-blue-500 text-blue-600"
-                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
-                }`}
-              >
-                Testing Guide
-              </button>
-            </nav>
-          </div>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+          {/* Left Sidebar - Navigation and Status */}
+          <div className="lg:col-span-1">
+            {/* Tab Navigation */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 mb-6">
+              <h3 className="font-semibold text-gray-900 mb-4">Testing Sections</h3>
+              <nav className="space-y-2">
+                <button
+                  onClick={() => setActiveTab("setup")}
+                  className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm transition-colors ${
+                    activeTab === "setup"
+                      ? "bg-blue-50 text-blue-700 border border-blue-200"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                  }`}
+                >
+                  Family Setup
+                </button>
+                <button
+                  onClick={() => setActiveTab("guide")}
+                  className={`w-full text-left px-4 py-3 rounded-lg font-medium text-sm transition-colors ${
+                    activeTab === "guide"
+                      ? "bg-blue-50 text-blue-700 border border-blue-200"
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                  }`}
+                >
+                  Testing Guide
+                </button>
+              </nav>
+            </div>
 
-        {/* Content */}
-        {activeTab === "setup" && (
-          <div className="space-y-6">
             {/* Test Families Created */}
             {testFamilies.length > 0 && (
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <h3 className="font-medium text-blue-900 mb-2">Test Families Created</h3>
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                <h3 className="font-medium text-blue-900 mb-3">Test Families Created</h3>
                 <div className="space-y-2">
                   {testFamilies.map((familyId, index) => (
-                    <div key={familyId} className="text-sm text-blue-700">
+                    <div key={familyId} className="text-sm text-blue-700 bg-white rounded-lg p-2">
                       Family {index + 1}: {familyId}
                     </div>
                   ))}
                 </div>
               </div>
             )}
-
-            {/* Family Setup Component */}
-            <FamilyTestSetup onComplete={handleFamilyCreated} />
           </div>
-        )}
 
-        {activeTab === "guide" && (
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">User Testing Guide</h2>
+          {/* Main Content Area */}
+          <div className="lg:col-span-3">
+            {activeTab === "setup" && (
+              <div className="space-y-6">
+                {/* Family Setup Component */}
+                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Family Test Setup</h2>
+                  <FamilyTestSetup onComplete={handleFamilyCreated} />
+                </div>
+              </div>
+            )}
+
+            {activeTab === "guide" && (
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">User Testing Guide</h2>
             
             <div className="space-y-6">
               {/* Quick Reference */}
@@ -97,7 +132,7 @@ export default function TestingPage() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li>• <strong>&lt;5 Second Expense Entry:</strong> Validate core user workflow</li>
                   <li>• <strong>Family Real-time Sync:</strong> Test collaborative family budgeting</li>
-                  <li>• <strong>Daily Budget Clarity:</strong> Ensure "What can we spend today?" is clear</li>
+                  <li>• <strong>Daily Budget Clarity:</strong> Ensure &quot;What can we spend today?&quot; is clear</li>
                   <li>• <strong>Mobile-First UX:</strong> Validate touch-optimized design</li>
                 </ul>
               </div>
@@ -152,9 +187,9 @@ export default function TestingPage() {
                     <div><strong>Goal:</strong> Test daily budget clarity</div>
                     <div><strong>Questions:</strong></div>
                     <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>"What does $47 Available Today mean?"</li>
-                      <li>"How is this calculated?"</li>
-                      <li>"What if we're over budget?"</li>
+                      <li>&quot;What does $47 Available Today mean?&quot;</li>
+                      <li>&quot;How is this calculated?&quot;</li>
+                      <li>&quot;What if we&apos;re over budget?&quot;</li>
                     </ul>
                   </div>
                 </div>
@@ -189,7 +224,7 @@ export default function TestingPage() {
               <div className="bg-blue-50 p-4 rounded-lg">
                 <h3 className="font-bold text-blue-900 mb-3">📋 Next Steps</h3>
                 <ol className="list-decimal list-inside space-y-1 text-sm text-blue-800">
-                  <li>Create test family using the "Family Setup" tab</li>
+                  <li>Create test family using the &quot;Family Setup&quot; tab</li>
                   <li>Test all scenarios with multiple family members</li>
                   <li>Record performance metrics and user feedback</li>
                   <li>Document any issues or improvement opportunities</li>

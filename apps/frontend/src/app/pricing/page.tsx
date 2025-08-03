@@ -49,7 +49,7 @@ export default function PricingPage() {
     
     try {
       // Check if Stripe is configured
-      const { validateClientStripeConfig, getStripeSetupInstructions } = await import('@/lib/env-validation');
+      const { validateClientStripeConfig } = await import('@/lib/env-validation');
       
       if (!validateClientStripeConfig()) {
         alert(
@@ -253,8 +253,8 @@ export default function PricingPage() {
                 What happens after my free trial?
               </h3>
               <p className="text-gray-600">
-                After 14 days, you'll be charged the monthly or annual fee based on your selection. 
-                You can cancel anytime before the trial ends and won't be charged.
+                After 14 days, you&apos;ll be charged the monthly or annual fee based on your selection. 
+                You can cancel anytime before the trial ends and won&apos;t be charged.
               </p>
             </div>
 
@@ -283,7 +283,7 @@ export default function PricingPage() {
                 Do you offer refunds?
               </h3>
               <p className="text-gray-600">
-                We offer a 30-day money-back guarantee. If you're not satisfied within the first 30 days, 
+                We offer a 30-day money-back guarantee. If you&apos;re not satisfied within the first 30 days, 
                 contact support for a full refund.
               </p>
             </div>
